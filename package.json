@@ -1,0 +1,47 @@
+{
+  "name": "@devil-q/mcp-tracking-server",
+  "version": "1.0.3",
+  "description": "通用埋点 MCP Server - 解析神策埋点文档，辅助 AI 自动埋点",
+  "keywords": [
+    "mcp",
+    "tracking",
+    "sensors",
+    "analytics",
+    "埋点"
+  ],
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-tracking-server": "dist/index.js",
+    "@devil-q/mcp-tracking-server": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "postversion": "git push --follow-tags",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major"
+  },
+  "dependencies": {
+    "@ast-grep/napi": "^0.42.2",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "fast-glob": "^3.3.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
